@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://bkwug6pqahwqh"]
+
+[ext_resource type="Script" uid="uid://b6tvwb2o2cj6l" path="res://Scripts/player.gd" id="1_cvnsp"]
+[ext_resource type="Texture2D" uid="uid://cualeek1tlogt" path="res://Assets/fish.png" id="1_v0iea"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v0iea"]
+size = Vector2(194, 60)
+
+[node name="Player" type="CharacterBody2D" unique_id=414717005]
+script = ExtResource("1_cvnsp")
+
+[node name="PlayerSprite" type="Sprite2D" parent="." unique_id=145074088]
+texture = ExtResource("1_v0iea")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1617622258]
+position = Vector2(10, 0)
+shape = SubResource("RectangleShape2D_v0iea")
+
+[node name="PlayerDialog" type="Label" parent="." unique_id=1029483312]
+offset_left = -75.0
+offset_top = -54.0
+offset_right = 97.0
+offset_bottom = -31.0
+text = "Get out of my ocean!"
+
+[node name="Timer" type="Timer" parent="." unique_id=892261623]
+wait_time = 3.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

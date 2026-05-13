@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://cxejf3ctdapvm"]
+
+[ext_resource type="Texture2D" uid="uid://uo06npf6k7gn" path="res://Assets/background.png" id="1_jjgbg"]
+[ext_resource type="Script" uid="uid://fbhckcrkbbbq" path="res://Scripts/main.gd" id="1_kry3j"]
+[ext_resource type="PackedScene" uid="uid://bkwug6pqahwqh" path="res://Scenes/player.tscn" id="2_bo1nx"]
+[ext_resource type="PackedScene" uid="uid://brls11dogmwlp" path="res://Scenes/trashbag.tscn" id="3_8gbba"]
+[ext_resource type="PackedScene" uid="uid://cxvgn5jfhfjca" path="res://Scenes/ball.tscn" id="4_jjvhh"]
+[ext_resource type="Texture2D" uid="uid://cyxqs7q3kkx6l" path="res://Assets/ball.png" id="5_6bp64"]
+[ext_resource type="AudioStream" uid="uid://doluc3o6wyuqs" path="res://Assets/background.mp3" id="6_21xkr"]
+
+[node name="Main" type="Node2D" unique_id=917388339]
+script = ExtResource("1_kry3j")
+
+[node name="BackgroundSprite" type="Sprite2D" parent="." unique_id=1410369676]
+position = Vector2(576, 324)
+texture = ExtResource("1_jjgbg")
+
+[node name="Player" parent="." unique_id=414717005 instance=ExtResource("2_bo1nx")]
+position = Vector2(576, 592)
+
+[node name="Ball" parent="." unique_id=1637711475 instance=ExtResource("4_jjvhh")]
+position = Vector2(592, 543)
+scale = Vector2(1, 1)
+texture = ExtResource("5_6bp64")
+
+[node name="Trashbag" parent="." unique_id=67536355 instance=ExtResource("3_8gbba")]
+position = Vector2(153, 137)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=638765395]
+stream = ExtResource("6_21xkr")
+volume_db = -14.579
+autoplay = true
